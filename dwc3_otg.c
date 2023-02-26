@@ -1252,7 +1252,7 @@ int dwc3_otg_init(struct dwc3 *dwc)
 err3:
 #ifdef CONFIG_MACH_OPPO
 	if (get_pcb_version() < HW_VERSION__12)
-		cancel_delayed_work_sync(&dotg->non_standard_charger_work);
+		cancel_delayed_work_sync(&dotg->sm_work);
 	cancel_delayed_work_sync(&dotg->detect_work);
 #endif
 	cancel_delayed_work_sync(&dotg->sm_work);
